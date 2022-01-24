@@ -1,0 +1,63 @@
+
+
+
+
+
+.header-continar img{
+    width: 60px;
+    height: 60px;
+
+}
+.header-continar .nav-header{
+    height: 40px;
+    width: 94.7%;
+    background-color: #222;
+    float: right;
+    margin-top: 0%;
+    padding: 10px;
+   
+}
+.header-continar .nav-header a{
+    padding: 40px;
+    margin-left: 12%;
+    text-decoration: none;
+    color: #fff;  
+   
+ 
+ 
+}
+
+.header-continar .nav-header :hover{
+  color:cadetblue;
+
+
+
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer{
+   
+    text-align: center; 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #222;
+   color: #fff;
+   margin-top: 35%;
+   /* margin-bottom:5% ; */
+   
+} 
