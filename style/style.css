@@ -1,6 +1,7 @@
 
 
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 
 .header-continar img{
@@ -35,29 +36,31 @@
    
 }
 
-
-
-
-
-
-
-
-
-
-
-
+#empSec{
+    display: inline-flex;
+    
+}
 
 
 
 .footer{
    
-    text-align: center; 
+    /* text-align: center; 
    display: flex;
    align-items: center;
-   justify-content: center;
+   justify-content: center; */
    background-color: #222;
-   color: #fff;
-   margin-top: 13%;
+   color:rgb(253, 235, 247);
+   /* margin-top: 10%; */
    /* margin-bottom:5% ; */
+   text-align: center; 
+   position: fixed;
+   padding: 10px 10px 0px 10px;
+   bottom: 0;
+   width: 100%;
+   /* Height of the footer*/ 
+   height: 40px;
+   /* background: grey; */
+   font-family: 'Montserrat', sans-serif;
    
 } 

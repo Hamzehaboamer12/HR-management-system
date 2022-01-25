@@ -46,9 +46,6 @@
 
 
 
-
-
-
 .footer{
    
     text-align: center; 
@@ -58,6 +55,8 @@
    background-color: #222;
    color: #fff;
    margin-top: 35%;
+  
+  
    /* margin-bottom:5% ; */
    
 } 
