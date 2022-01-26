@@ -1,6 +1,9 @@
 
 
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+
 
 
 .header-continar img{
@@ -8,6 +11,43 @@
     height: 60px;
 
 }
+#Table h2  {
+    
+    text-align: center;
+    
+}
+/* #Table {
+    margin-left: 10%;
+margin-right: auto;
+margin-top: 20%;
+width: 100%;
+
+text-align: center;
+
+
+
+  } */
+
+ h2{
+       
+      text-align: center;
+     
+  }
+  .table{
+    
+    margin-left: 550px;
+    margin-top: 50px;
+
+    
+    
+  }
+  table, th, td {
+    border: 1px solid black;
+   
+    
+  }
+
+
 .header-continar .nav-header{
     height: 40px;
     width: 94.7%;
@@ -37,6 +77,11 @@
 
 
 
+#Table{
+    display: inline-flex;
+    
+}
+
 
 
 
@@ -48,15 +93,17 @@
 
 .footer{
    
-    text-align: center; 
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  
    background-color: #222;
-   color: #fff;
-   margin-top: 35%;
-  
-  
-   /* margin-bottom:5% ; */
+   color:rgb(253, 235, 247);
+   text-align: center; 
+   position: fixed;
+   padding: 10px 10px 0px 10px;
+   bottom: 0;
+   width: 100%;
+   /* Height of the footer*/ 
+   height: 40px;
+   /* background: grey; */
+   font-family: 'Montserrat', sans-serif;
    
 } 
