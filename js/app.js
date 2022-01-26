@@ -5,7 +5,8 @@ let empSec = document.getElementById('empSec');
 
 
 // let sec = document.getElementById("firstSection")
-
+let users = [];
+checkLocalAndPush();
 
 function Empinfo( EmployeeID, FirstName,LastName , Department , Level, Salary,imagePath ){
     this.EmployeeID =EmployeeID ;
@@ -44,12 +45,6 @@ Empinfo.prototype.getSalary2 = function() {
     this.Salary=netSalary;
     return salary;
  
- 
-     // let gitsalary = document.createElement('p');
-     // div.appendChild(gitsalary);
-     // gitsalary.textContent= this.salary;
- 
- 
     }
     
 
@@ -67,7 +62,13 @@ var getId = (function(num) {
   })(1); 
 
 
-Empinfo.prototype.render = function (){
+ function render(arr){
+    empSec.innerHTML = '';
+
+    for (let i = 0; i <arr.length; i++) {
+          let users = arr[i];
+
+
     let div1 = document.createElement('div');
     let img = document.createElement('img');
     let div2 = document.createElement('div');
@@ -83,9 +84,9 @@ Empinfo.prototype.render = function (){
            img.setAttribute("class","img")
           // div1.setAttribute
           div1.appendChild(img);
-          h5.textContent=` Name: ${this.FirstName +" "+ this.LastName}   ID: ${this.EmployeeID}   Department: ${this.Department} 
-                            Level: ${this.Level}
-                            Salary: ${this.Salary}`;
+          h5.textContent=` Name: ${users.FirstName +" "+ users.LastName}   ID: ${users.EmployeeID}   Department: ${users.Department} 
+                            Level: ${users.Level}
+                            Salary: ${users.Salary}`;
 
           div2.setAttribute("class","container");
           div2.appendChild(h5);
@@ -93,14 +94,14 @@ Empinfo.prototype.render = function (){
           
          
     
-          img.setAttribute('src',this.imagePath);
-          img.setAttribute('alt', this.FirstName);
+          img.setAttribute('src',users.imagePath);
+          img.setAttribute('alt', users.FirstName);
           img.style.width="250px"
           img.style.height="200px"
           
           
          empSec.appendChild(div1);
-    
+    }
 }
 
    function handelSubmit(event) {
@@ -125,10 +126,57 @@ Empinfo.prototype.render = function (){
     //let Form = new Empinfo(fname[0].toUpperCase()+fname.substring(1), lname, selDep, selLev);
     let Form = new Empinfo(getId() , fname[0].toUpperCase()+fname.substring(1),lname,selDep, selLev);
     let salary1 =Form.getSalary2();
+
+
+    users.push(Form);
+
+
+
+    let jsonArray= toJSON();
+  
+
+    saveToLocalS(jsonArray);
     
-    //salary1.getSalary2();
-    Form.render();
+    
+    //Form.render();
+    render(readFromLocalS());
+   //console.log(jsonArray);
 }
+function readFromLocalS(){
+    let jsonArray = localStorage.getItem('allusers');
+    let arr = JSON.parse(jsonArray);
+    if(arr !== null){
+        return arr;
+    }else{
+        return [];
+    }
+   
+     //console.log(jsonArray);
+    // console.log(arr);
+   
+}
+function checkLocalAndPush(){
+    if(users.length == 0 ){
+        let arr = readFromLocalS();
+        if(arr.length !=0){
+            users = arr;
+        }
+    }
+}
+
+
+function toJSON(){
+    let jsonArray = JSON.stringify(users);
+    return jsonArray;
+}
+
+function saveToLocalS(jsonArray){
+  localStorage.setItem('allusers' , jsonArray);
+}
+
+
+
+render(readFromLocalS());
 
 empForm.addEventListener('submit', handelSubmit);
    
@@ -159,28 +207,3 @@ empForm.addEventListener('submit', handelSubmit);
 
 
 
-//   let p = document.createElement('p');
-//       p.textContent(``)
-    
-//     let salary;
-//     let netSalary;
-//     let tax;
-//     if (this.Level === "Senior") {
-//        // this.Salary = Math.floor(Math.random() * (max - min) + min);
-
-//        salary = getSalary(1500 , 2000 );
-
-//     } else if (this.Level === "Mid-Senior") {
-//         //this.Salary = Math.floor(Math.random() * (max2 - min2) + min2);
-
-//         salary = getSalary(1000 , 1500 );    
-//     } else if (this.Level === "Junior") {
-//         salary = getSalary(500 , 1000 );   
-//     }
-//      tax = salary * (7.5/100)
-//     netSalary =   salary - tax  ;
-
-
-
-//     return netSalary;
- // console.log(this.Salary);
