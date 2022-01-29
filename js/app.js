@@ -86,6 +86,8 @@ Empinfo.prototype.render = function (){
           h5.textContent=` Name: ${this.FirstName +" "+ this.LastName}   ID: ${this.EmployeeID}   Department: ${this.Department} 
                             Level: ${this.Level}
                             Salary: ${this.Salary}`;
+                            h5.style.fontFamily="'Montserrat', sans-serif";
+                            h5.style.color="#000000";
 
           div2.setAttribute("class","container");
           div2.appendChild(h5);
