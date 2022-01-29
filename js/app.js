@@ -84,9 +84,17 @@ var getId = (function(num) {
            img.setAttribute("class","img")
           // div1.setAttribute
           div1.appendChild(img);
+
+          h5.textContent=` Name: ${this.FirstName +" "+ this.LastName}   ID: ${this.EmployeeID}   Department: ${this.Department} 
+                            Level: ${this.Level}
+                            Salary: ${this.Salary}`;
+                            h5.style.fontFamily="'Montserrat', sans-serif";
+                            h5.style.color="#000000";
+
           h5.textContent=` Name: ${users.FirstName +" "+ users.LastName}   ID: ${users.EmployeeID}   Department: ${users.Department} 
                             Level: ${users.Level}
                             Salary: ${users.Salary}`;
+
 
           div2.setAttribute("class","container");
           div2.appendChild(h5);
